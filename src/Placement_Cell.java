@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Placement_Cell {
+class Placement_Cell {
     public static void student_registration(){
         System.out.println("----------------------------------------------");
         System.out.println("Fill in the Details:-");
@@ -56,7 +56,6 @@ public class Placement_Cell {
         System.out.println(" 8. Get Average Package");
         System.out.println(" 9. Get Company Process Results");
         System.out.println("10. Back");
-        System.out.println("10. Back");
         System.out.print("Enter your choice: ");
         int choice=sc.nextInt();
         if(choice==1){
@@ -75,17 +74,42 @@ public class Placement_Cell {
             System.out.println("Total number of Registered Companies: "+reg_companies_count);
 
         } else if (choice==5) {
-            
+            System.out.println(" Number of Offered Students   : "+" //////// ");
+            System.out.println(" Number of Unoffered Students : "+" //////// ");
+            System.out.println(" Number of Blocked Students   : "+" //////// ");
 
         } else if (choice==6) {
+            System.out.print("Enter name: ");
+            String student_name=sc.nextLine();
+            System.out.print("Enter Roll no: ");
+            int rollno=sc.nextInt();
+
+
+            //// show student details from student class
+
 
         } else if (choice==7) {
+            System.out.print("Enter name: ");
+            String company_name=sc.nextLine();
+
+
+            //// print company details
+
 
         } else if (choice==8) {
 
+            System.out.println("Average Package offered to the students of institute: "+ "  //////////   ");
+
         } else if (choice==9) {
+            System.out.print("Enter the name of the company: ");
+            String c_name=sc.nextLine();
+            {
+              /// code for printing selected students list
+            }
+
             
         } else if (choice==10) {
+            Future_Builder.Application();
             
         } else {
             System.out.println("Wrong Input");

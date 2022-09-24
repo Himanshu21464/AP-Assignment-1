@@ -53,6 +53,39 @@ class Company {
     }
 
     public static void choose_company(){
+        System.out.println("-------------------------Available Companies---------------------------");
+        System.out.println("///////////// print company list /////");
+        Scanner sc=new Scanner(System.in);
+        int option=sc.nextInt();
+
+        //// select company from company.obj list
+        String comp_name;
+        System.out.println("-------------------Welcome "+"/////company name "+"--------------------");
+        System.out.println("1. Update Role");
+        System.out.println("2. Update Package");
+        System.out.println("3. Update CGPA Criteria");
+        System.out.println("4. Register to Institute Drive");
+        System.out.println("5. Back");
+        int option2=sc.nextInt();
+        /*if(option2==1){
+            comp_name.Role=sc.nextLine();
+        } else if (option2==2) {
+            comp_name.Package=sc.nextDouble();
+        } else if (option2==3) {
+            comp_name.CGPA_criteria=sc.nextDouble()
+
+        } else if (option2==4) {
+            ////////////////Register for institute drive
+        } else if (option2==5) {
+            company_function();
+
+        } else{
+            System.out.println("Wrong input!!!");
+            choose_company();
+        }
+
+        */
+
 
     }
 
