@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Company {
+class Company {
     String Company_name;
     String Role;
     double pkg;
@@ -11,7 +11,7 @@ public class Company {
     public Company(){
     }
 
-    public static void main(){
+    public static void company_function(){
         Scanner sc=new Scanner(System.in);
         System.out.println();
         Company company=new Company();

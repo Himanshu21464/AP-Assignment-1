@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Enter_As_Student {
-    public static void main(){
+class Enter_As_Student {
+    public static void student_mode(){
         Scanner sc =new Scanner(System.in);
         System.out.print("Enter your name: ");
         String name=sc.nextLine();

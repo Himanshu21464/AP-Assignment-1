@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Placement_Cell {
 
-    public static void main(){
+    public static void placement_function(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Welcome to IIITD placement Cell");
         System.out.println(" 1. Open Student Registrations");

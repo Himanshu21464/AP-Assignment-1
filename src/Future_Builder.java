@@ -39,7 +39,7 @@ public class Future_Builder {
             Placement_Cell.main();
 
         } else if (mode==4){
-            main();
+            //main();
         } else {
             System.out.println("Wrong Input");
 

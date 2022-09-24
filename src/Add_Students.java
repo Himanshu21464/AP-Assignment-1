@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Add_Students {
+class Add_Students {
         String name;
         int Roll_no;
         double CGPA;
@@ -9,7 +9,7 @@ public class Add_Students {
         }
 
 
-    public static void main(){
+    public static void Student_function(){
             Scanner sc = new Scanner(System.in);
             Add_Students student =new Add_Students();
             System.out.print("Enter Student's name: ");
