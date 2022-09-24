@@ -2,6 +2,16 @@ import javax.lang.model.type.NullType;
 import java.util.*;
 
 public class Future_Builder {
+    public static int main_menu(){
+        System.out.println("Welcome to Future Builder");
+        System.out.println("1. Enter the Application");
+        System.out.println("2. Exit the Application");
+        System.out.print("Enter your choice: ");
+        Scanner sc =new Scanner(System.in);
+        int op=sc.nextInt();
+        return op;
+
+    }
     public static int function(){
         System.out.println("1. Enter as Student");
         System.out.println("2. Add Students");
@@ -22,9 +32,9 @@ public class Future_Builder {
         if (mode==1){
             int query=function();
             if(query==1){
-                Enter_As_Student.main();
+                Enter_As_Student.student_mode();
             } else if (query==2) {
-                Add_Students.main();
+                Add_Students.Student_function();
             } else if (query==3) {
                 Application();
             }  else{
@@ -33,10 +43,10 @@ public class Future_Builder {
             }
 
         } else if (mode==2){
-            Company.main();
+            Company.company_function();
 
         } else if (mode==3){
-            Placement_Cell.main();
+            Placement_Cell.placement_function();
 
         } else if (mode==4){
             //main();
@@ -48,12 +58,7 @@ public class Future_Builder {
     }
 
         public static void main(String arg[]) {
-        System.out.println("Welcome to Future Builder");
-        System.out.println("1. Enter the Application");
-        System.out.println("2. Exit the Application");
-        System.out.print("Enter your choice: ");
-        Scanner sc =new Scanner(System.in);
-        int option=sc.nextInt();
+        int option=main_menu();
         if(option==1){
             Future_Builder.Application();
         } else if (option==2){
