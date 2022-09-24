@@ -90,6 +90,7 @@ class Add_Students {
 
 
     public static void Student_function(){
+
             Scanner sc = new Scanner(System.in);
             Add_Students student =new Add_Students();
             System.out.print("Enter Student's name: ");
