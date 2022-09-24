@@ -1,6 +1,26 @@
 import java.util.Scanner;
 
 public class Students{
+
+        public static void function(){
+                System.out.println("1. Enter as Student");
+                System.out.println("2. Add Students");
+                System.out.println("3. Back");
+                System.out.println("Choose the Student query to perform: ");
+                Scanner sc=new Scanner(System.in);
+                int query=sc.nextInt();
+                if(query==1){
+                        Enter_As_Student.student_mode();
+                } else if (query==2) {
+                        Add_Students.Student_function();
+                } else if (query==3) {
+                        Future_Builder.Application();
+                }  else{
+                        System.out.println("Wrong Input!!");
+                        Students.function();
+
+                }
+        }
         public static void main(String[] args){
 
         }

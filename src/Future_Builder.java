@@ -30,18 +30,7 @@ public class Future_Builder {
         Scanner sc =new Scanner(System.in);
         int mode= sc.nextInt();
         if (mode==1){
-            int query=function();
-            if(query==1){
-                Enter_As_Student.student_mode();
-            } else if (query==2) {
-                Add_Students.Student_function();
-            } else if (query==3) {
-                Application();
-            }  else{
-                System.out.println("Wrong Input!!");
-
-            }
-
+            Students.function();
         } else if (mode==2){
             Company.company_function();
 
@@ -49,24 +38,17 @@ public class Future_Builder {
             Placement_Cell.placement_function();
 
         } else if (mode==4){
-            //main();
+            main_menu();
         } else {
             System.out.println("Wrong Input");
-
+            Application();
         }
 
     }
-    public static int function(){
-        System.out.println("1. Enter as Student");
-        System.out.println("2. Add Students");
-        System.out.println("3. Back");
-        System.out.println("Choose the Student query to perform: ");
-        Scanner sc=new Scanner(System.in);
-        int q=sc.nextInt();
-        return q;
-    }
+
 
         public static void main(String arg[]) {
+        main_menu();
 
 
         }
