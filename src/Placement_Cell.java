@@ -1,9 +1,50 @@
 import java.util.Scanner;
 
 public class Placement_Cell {
+    public static void student_registration(){
+        System.out.println("----------------------------------------------");
+        System.out.println("Fill in the Details:-");
+        System.out.println("1. Set Opening time for Student Registrations");
+        System.out.println("2. Set Closing time for Student Registrations");
+        Scanner sc =new Scanner(System.in);
+        int option=sc.nextInt();
+        if (option==1){
+            final String opening_date=sc.nextLine();
+        } else if (option==2) {
+            final String closing_date = sc.nextLine();
+        }else {
+            System.out.println("Wrong Input!!!");
+            System.out.println(" ");
+            student_registration();
+        }
+
+    }
+
+    public static void company_registration(){
+        System.out.println("----------------------------------------------");
+        System.out.println("Fill in the Details:-");
+        System.out.println("1. Set Opening time for Company Registrations");
+        System.out.println("2. Set Closing time for Company Registrations");
+        Scanner sc =new Scanner(System.in);
+        int option=sc.nextInt();
+        if (option==1){
+            final String opening_date=sc.nextLine();
+        } else if (option==2) {
+            final String closing_date = sc.nextLine();
+        }else {
+            System.out.println("Wrong Input!!!");
+            System.out.println(" ");
+            company_registration();
+        }
+
+    }
+
+
+
 
     public static void placement_function(){
         Scanner sc=new Scanner(System.in);
+        int reg_students_count=0,reg_companies_count=0;
         System.out.println("Welcome to IIITD placement Cell");
         System.out.println(" 1. Open Student Registrations");
         System.out.println(" 2. Open Company Registrations");
@@ -19,14 +60,22 @@ public class Placement_Cell {
         System.out.print("Enter your choice: ");
         int choice=sc.nextInt();
         if(choice==1){
+            student_registration();
+            reg_students_count++;
 
         } else if (choice==2) {
+            company_registration();
+            reg_companies_count++;
 
         } else if (choice==3) {
+            System.out.println("Total number of Registered Students: "+reg_students_count);
+
 
         } else if (choice==4) {
+            System.out.println("Total number of Registered Companies: "+reg_companies_count);
 
         } else if (choice==5) {
+            
 
         } else if (choice==6) {
 
