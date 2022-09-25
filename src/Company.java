@@ -36,7 +36,7 @@ class Company {
 
     }
 
-    static ArrayList<Company> company_list=new ArrayList<>();
+    public static ArrayList<Company> company_list=new ArrayList<>();
     public static void company_function(){
         System.out.println("--------------------------------------------------");
         System.out.println("1. Add Company and Details");
@@ -76,10 +76,6 @@ class Company {
         company_list.add(company);
         company_function();
 
-
-
-        //Add company to a companies list
-        //company.date_time=sc.nextLine();
     }
 
     public static void choose_company(){
