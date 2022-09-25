@@ -1,6 +1,29 @@
 import java.util.Scanner;
 
 class Placement_Cell {
+    int comp_opening_day,comp_opening_month,comp_opening_year;
+    int comp_closing_day,comp_closing_month,comp_closing_year;
+    int stud_opening_day,stud_opening_month,stud_opening_year;
+    int stud_closing_day,stud_closing_month,stud_closing_year;
+    int offered_students,unoffered_students,blocked_students;
+
+    public Placement_Cell(){
+        this.blocked_students=0;
+        this.offered_students=0;
+        this.unoffered_students=0;
+        this.stud_opening_day=0;
+        this.stud_opening_month=0;
+        this.stud_opening_year=0;
+        this.stud_closing_day=0;
+        this.stud_closing_month=0;
+        this.stud_closing_year=0;
+        this.comp_closing_day=0;
+        this.comp_closing_month=0;
+        this.comp_closing_year=0;
+        this.comp_opening_day=0;
+        this.comp_opening_month=0;
+        this.comp_opening_year=0;
+    }
     public static void student_registration(){
         System.out.println("----------------------------------------------");
         System.out.println("Fill in the Details:-");
@@ -8,10 +31,14 @@ class Placement_Cell {
         System.out.println("2. Set Closing time for Student Registrations");
         Scanner sc =new Scanner(System.in);
         int option=sc.nextInt();
+
         if (option==1){
-            final String opening_date=sc.nextLine();
+            if(1==1){
+
+            }
+            //final String opening_date=sc.nextLine();
         } else if (option==2) {
-            final String closing_date = sc.nextLine();
+            //final String closing_date = sc.nextLine();
         }else {
             System.out.println("Wrong Input!!!");
             System.out.println(" ");
