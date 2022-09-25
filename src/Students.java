@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static java.util.logging.Logger.global;
+class Global{
+        public static int i;
+
+}
 class Students{
 
         public static void function(){
@@ -34,9 +40,9 @@ class Enter_As_Student {
                 String name=sc.nextLine();
                 System.out.print("Enter your Roll no.: ");
                 int roll_no=sc.nextInt();
-                int i = 0;
-                while (Add_Students.student_list.get(i).Roll_no != roll_no) {
-                        i++;
+                 Global.i = 0;
+                while (Add_Students.student_list.get(Global.i).Roll_no != roll_no) {
+                        Global.i++;
                 }
                 System.out.println("-------------- Welcome "+name+"!! -----------------");
                 student_mode();
@@ -55,6 +61,37 @@ class Enter_As_Student {
                 int choice=sc.nextInt();
                 System.out.println("----------------------------------------------------");
                 if(choice==1){
+                        if (Add_Students.student_list.get((Global.i)).drive_status==0){
+
+                                System.out.println();
+                                System.out.print("Enter date of registration(dd mm yy): ");
+                                Add_Students.student_list.get(Global.i).day = sc.nextInt();
+                                Add_Students.student_list.get(Global.i).month = sc.nextInt();
+                                Add_Students.student_list.get(Global.i).year = sc.nextInt();
+                                sc.nextLine();
+                                System.out.println();
+                                if (Add_Students.student_list.get(Global.i).year >=Placement_Cell.pc. && Add_Students.student_list.get(Global.i).year <= p1.scyear) {
+                                        if (li.get(i).month >= p1.somonth && li.get(i).month <= p1.scmonth) {
+                                                if (li.get(i).day >= p1.soday && li.get(i).day <= p1.scday) {
+                                                        if (li.get(i).hr >= p1.sohr && li.get(i).hr <= p1.schr) {
+                                                                if (li.get(i).min >= p1.somin && li.get(i).min <= p1.scmin) {
+                                                                        System.out.println("Student registered successfully!!!");
+                                                                        li.get(i).driveStatus = 1;
+                                                                        p1.regStud++;
+                                                                } else
+                                                                        System.out.println("Registration is not Active!!!");
+                                                        } else
+                                                                System.out.println("Registration is not Active!!!");
+                                                } else
+                                                        System.out.println("Registration is not Active!!!");
+                                        } else
+                                                System.out.println("Registration is not Active!!!");
+
+                                } else
+                                        System.out.println("Registration is not Active!!!");
+
+
+                        }
                         ////Placement_Cell.student_registration();
                         System.out.println(" "+"Registered for placement drive at IIITD!!!!");
                         student_mode();
@@ -91,8 +128,8 @@ class Enter_As_Student {
         }
 }
 class Add_Students {
-        String name, branch, status, drive_status;
-        int Roll_no,reject,ctc,registered_status,day,month,year;
+        String name, branch, status;
+        int Roll_no,reject,ctc,registered_status,day,month,year,drive_status;
         boolean blocked, accepted;
         double CGPA;
 
@@ -100,7 +137,7 @@ class Add_Students {
                 this.ctc=0;
                 this.accepted=false;
                 this.blocked=false;
-                this.drive_status=null;
+                this.drive_status=0;
                 this.status=null;
                 this.reject=0;
                 this.name=name;
@@ -122,7 +159,7 @@ class Add_Students {
         {
                 this.CGPA = CGPA;
         }
-}
+
 
         static ArrayList<Add_Students> student_list=new ArrayList<>();
     public static void Student_function(){

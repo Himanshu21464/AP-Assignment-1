@@ -56,6 +56,8 @@ public class Future_Builder {
 
 
         public static void main(String arg[]) {
+        Placement_Cell pl1 =new Placement_Cell();
+
         main_menu();
 
 

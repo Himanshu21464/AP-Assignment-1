@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Placement_Cell {
@@ -24,6 +25,7 @@ class Placement_Cell {
         this.comp_opening_month=0;
         this.comp_opening_year=0;
     }
+    static ArrayList<Placement_Cell> pc =new ArrayList<>();
     public static void student_registration(){
         System.out.println("----------------------------------------------");
         System.out.println("Fill in the Details:-");
