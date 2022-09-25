@@ -70,18 +70,12 @@ class Enter_As_Student {
                                 Add_Students.student_list.get(Global.i).year = sc.nextInt();
                                 sc.nextLine();
                                 System.out.println();
-                                if (Add_Students.student_list.get(Global.i).year >=Placement_Cell.pc. && Add_Students.student_list.get(Global.i).year <= p1.scyear) {
-                                        if (li.get(i).month >= p1.somonth && li.get(i).month <= p1.scmonth) {
-                                                if (li.get(i).day >= p1.soday && li.get(i).day <= p1.scday) {
-                                                        if (li.get(i).hr >= p1.sohr && li.get(i).hr <= p1.schr) {
-                                                                if (li.get(i).min >= p1.somin && li.get(i).min <= p1.scmin) {
-                                                                        System.out.println("Student registered successfully!!!");
-                                                                        li.get(i).driveStatus = 1;
-                                                                        p1.regStud++;
-                                                                } else
-                                                                        System.out.println("Registration is not Active!!!");
-                                                        } else
-                                                                System.out.println("Registration is not Active!!!");
+                                if (Add_Students.student_list.get(Global.i).year >=Placement_Cell.p1.stud_opening_year && Add_Students.student_list.get(Global.i).year <= Placement_Cell.p1.stud_closing_year) {
+                                        if (Add_Students.student_list.get(Global.i).month >= Placement_Cell.p1.stud_opening_month && Add_Students.student_list.get(Global.i).month <= Placement_Cell.p1.stud_closing_month) {
+                                                if (Add_Students.student_list.get(Global.i).day >= Placement_Cell.p1.stud_opening_day && Add_Students.student_list.get(Global.i).day <=Placement_Cell.p1.stud_closing_day) {
+                                                        System.out.println("Student registered successfully!!!");
+                                                        Add_Students.student_list.get(Global.i).drive_status = 1;
+                                                        Placement_Cell.p1.reg_students_count++;
                                                 } else
                                                         System.out.println("Registration is not Active!!!");
                                         } else
@@ -128,7 +122,7 @@ class Enter_As_Student {
         }
 }
 class Add_Students {
-        String name, branch, status;
+        String name, branch, status,Role;
         int Roll_no,reject,ctc,registered_status,day,month,year,drive_status;
         boolean blocked, accepted;
         double CGPA;

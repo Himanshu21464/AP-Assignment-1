@@ -5,11 +5,11 @@ import java.util.Scanner;
 class Company {
     int day,month,year,status;
     String Company_name,Role;
-    double ctc,pkg,Cgpa_Criteria;
+    double ctc,Cgpa_Criteria;
 
-    public Company(String Cname,String Role,double pkg,double Cgpa_Criteria){
+    public Company(String Cname,String Role,double ctc,double Cgpa_Criteria){
         this.Company_name=Cname;
-        this.pkg=pkg;
+        this.ctc=ctc;
         this.day=0;
         this.month=0;
         this.year=0;
@@ -22,10 +22,10 @@ class Company {
         System.out.println("Role is updated successfully!!!");
     }
 
-    public double get_pkg(){
-        return this.pkg;
+    public double get_ctc(){
+        return this.ctc;
     }
-    public void pkg_Update(int ctc) {
+    public void ctc_Update(int ctc) {
         this.ctc = ctc;
         System.out.println("CTC is updated successfully!!!");
     }
@@ -69,10 +69,10 @@ class Company {
         System.out.print("Enter Role: ");
         String Role=sc.nextLine();
         System.out.print("Enter package: ");
-        double pkg=sc.nextDouble();
+        double ctc=sc.nextDouble();
         System.out.print("Enter CGPA Criteria: ");
         double Cgpa_Criteria= sc.nextDouble();
-        Company company=new Company(Company_name,Role,pkg,Cgpa_Criteria);
+        Company company=new Company(Company_name,Role,ctc,Cgpa_Criteria);
         company_list.add(company);
         company_function();
 
