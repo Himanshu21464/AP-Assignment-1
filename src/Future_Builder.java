@@ -107,20 +107,21 @@ class Placement_Cell {
                 }
 
             }
-            System.out.println("Offered Students   : "+Placement_Cell.p1.offered_students);
-            System.out.println("Unoffered Students : "+Placement_Cell.p1.unoffered_students);
-            System.out.println("Blocked Students   : "+Placement_Cell.p1.blocked_students);
+            System.out.println("Offered Students   :    "+Placement_Cell.p1.offered_students);
+            System.out.println("Unoffered Students :    "+Placement_Cell.p1.unoffered_students);
+            System.out.println("Blocked Students   :    "+Placement_Cell.p1.blocked_students);
+            placement_function();
 
 
         } else if (choice==6) {
             System.out.println();
             for (int x = 0; x < Add_Students.student_list.size(); x++) {
-                System.out.println("Name    : "+Add_Students.student_list.get(x).name);
-                System.out.println("Roll no : "+Add_Students.student_list.get(x).Roll_no);
-                System.out.println("Branch  : "+Add_Students.student_list.get(x).branch);
-                System.out.println("CGPA    : "+Add_Students.student_list.get(x).CGPA);
-                System.out.println("CTC     : "+Add_Students.student_list.get(x).ctc);
-                System.out.println("Role    : "+Add_Students.student_list.get(x).Role);
+                System.out.println("Name    :   "+Add_Students.student_list.get(x).name);
+                System.out.println("Roll no :   "+Add_Students.student_list.get(x).Roll_no);
+                System.out.println("Branch  :   "+Add_Students.student_list.get(x).branch);
+                System.out.println("CGPA    :   "+Add_Students.student_list.get(x).CGPA);
+                System.out.println("CTC     :   "+Add_Students.student_list.get(x).ctc);
+                System.out.println("Role    :   "+Add_Students.student_list.get(x).Role);
                 System.out.println();
 
             }
@@ -129,10 +130,10 @@ class Placement_Cell {
         } else if (choice==7) {
             System.out.println();
             for (int y = 0; y <Company.company_list.size() ; y++) {
-                System.out.println("Name    : "+Company.company_list.get(y).Company_name);
-                System.out.println("Role    : "+Company.company_list.get(y).Role);
-                System.out.println("CTC     : "+Company.company_list.get(y).ctc);
-                System.out.println("CGPA    : "+Company.company_list.get(y).Cgpa_Criteria);
+                System.out.println("Name    :   "+Company.company_list.get(y).Company_name);
+                System.out.println("Role    :   "+Company.company_list.get(y).Role);
+                System.out.println("CTC     :   "+Company.company_list.get(y).ctc);
+                System.out.println("CGPA    :   "+Company.company_list.get(y).Cgpa_Criteria);
                 System.out.println();
 
             }
@@ -146,20 +147,21 @@ class Placement_Cell {
                     sum=sum+Add_Students.student_list.get(p).ctc;
                 }
                 average=sum/count;
-                System.out.println("Average Package: "+average);
-
             }
+            System.out.println("Average Package: "+average);
             placement_function();
 
         } else if (choice==9) {
             for (int i = 0; i <Add_Students.student_list.size() ; i++) {
                 if(Add_Students.student_list.get(i).accepted==true){
                     System.out.println();
-                    System.out.println("Name     : "+Add_Students.student_list.get(i).name);
-                    System.out.println("Roll no  : "+Add_Students.student_list.get(i).Roll_no);
-                    System.out.println("Branch   : "+Add_Students.student_list.get(i).branch);
-                    System.out.println("CGPA     : "+Add_Students.student_list.get(i).CGPA);
-                    System.out.println("Role     : "+Add_Students.student_list.get(i).Role);
+                    System.out.println("Name          :     "+Add_Students.student_list.get(i).name);
+                    System.out.println("Roll no       :     "+Add_Students.student_list.get(i).Roll_no);
+                    System.out.println("Branch        :     "+Add_Students.student_list.get(i).branch);
+                    System.out.println("CGPA          :     "+Add_Students.student_list.get(i).CGPA);
+                    System.out.println("Role          :     "+Add_Students.student_list.get(i).Role);
+                    System.out.println("Company       :     "+Add_Students.student_list.get(i).Selected_Company_Name);
+                    System.out.println("CTC (in LPA)  :     "+Add_Students.student_list.get(i).ctc);
                 }
 
             }placement_function();
@@ -200,7 +202,8 @@ class Students{
     }
 
 }
-class Company {
+class
+Company {
     int day,month,year,status;
     String Company_name,Role;
     double ctc,Cgpa_Criteria;
@@ -290,6 +293,7 @@ class Company {
             System.out.println("3. Update CGPA Criteria");
             System.out.println("4. Register to Institute Drive");
             System.out.println("5. Back");
+            System.out.print("Enter your choice: ");
             choice4 = sc.nextInt();
             System.out.println();
             if (choice4 == 1) {
@@ -410,13 +414,18 @@ class Enter_As_Student {
             int array[],temporary=0;
             array = new int[Company.company_list.size()];
             for (int k = 0; k < Company.company_list.size(); k++) {
-                if (Company.company_list.get(k).Cgpa_Criteria <= Add_Students.student_list.get(k).CGPA&&Company.company_list.get(k).status==1) {
+                if ((Company.company_list.get(k).Cgpa_Criteria <= Add_Students.student_list.get(Global.i).CGPA)&&(Company.company_list.get(k).status==1)) {
                     System.out.println();
                     System.out.println((count+1) + ") " + Company.company_list.get(k).Company_name);
                     array[count] = k;
                     temporary=k;
                     count++;
                 }
+            }
+            if(count==0){
+                System.out.println("You are not eligible to register for any of the company!!! ");
+                student_mode();
+
             }
             if(Add_Students.student_list.get(Global.i).accepted==false|Add_Students.student_list.get(Global.i).ctc<=3*(Company.company_list.get(temporary).ctc)) {
                 System.out.println();
@@ -433,25 +442,32 @@ class Enter_As_Student {
         } else if (choice == 3) {
             for (int j = 0; j < Company.company_list.size(); j++) {
                 System.out.println();
-                System.out.println("Name  : " + Company.company_list.get(j).Company_name);
-                System.out.println("CGPA  : " + Company.company_list.get(j).Cgpa_Criteria);
-                System.out.println("CTC   : " + Company.company_list.get(j).ctc);
+                System.out.println("Name    :     " + Company.company_list.get(j).Company_name);
+                System.out.println("Name    :     " + Company.company_list.get(j).Role);
+                System.out.println("CGPA    :     " + Company.company_list.get(j).Cgpa_Criteria);
+                System.out.println("CTC     :     " + Company.company_list.get(j).ctc);
             }
             student_mode();
         } else if (choice == 4) {
             System.out.println();
-            if (Add_Students.student_list.get(Global.i).registered_status == 1) {
+            if ((Add_Students.student_list.get(Global.i).registered_status == 1)&&(Add_Students.student_list.get(Global.i).accepted==false)) {
                 System.out.println("Student got offer!!!");
                 for (int j = 0; j < Add_Students.student_list.get(Global.i).company_list.size(); j++) {
                     System.out.println();
-                    System.out.println("Name  : " + Add_Students.student_list.get(Global.i).company_list.get(j).Company_name);
-                    System.out.println("Role  : "+  Add_Students.student_list.get(Global.i).company_list.get(j).Role);
-                    System.out.println("CGPA  : " + Add_Students.student_list.get(Global.i).company_list.get(j).Cgpa_Criteria);
-                    System.out.println("CTC   : " + Add_Students.student_list.get(Global.i).company_list.get(j).ctc);
+                    System.out.println("Name    :    " + Add_Students.student_list.get(Global.i).company_list.get(j).Company_name);
+                    System.out.println("Role    :    "+  Add_Students.student_list.get(Global.i).company_list.get(j).Role);
+                    System.out.println("CGPA    :    " + Add_Students.student_list.get(Global.i).company_list.get(j).Cgpa_Criteria);
+                    System.out.println("CTC     :    " + Add_Students.student_list.get(Global.i).company_list.get(j).ctc);
                 }
             } else if (Add_Students.student_list.get(Global.i).blocked == true) {
                 System.out.println("Student is Blocked");
-            } else if (Add_Students.student_list.get(Global.i).status == 0) {
+            } else if((Add_Students.student_list.get(Global.i).accepted==true)&&(Add_Students.student_list.get(Global.i).blocked==false)){
+                System.out.println("Student has already accepted the offer!!! ");
+                System.out.println("Company name    :   " +Add_Students.student_list.get(Global.i).Selected_Company_Name);
+                System.out.println("Role            :   " +Add_Students.student_list.get(Global.i).Role);
+                System.out.println("CTC (in LPA)    :   " +Add_Students.student_list.get(Global.i).ctc);
+
+            } else if ((Add_Students.student_list.get(Global.i).registered_status == 0)&&(Add_Students.student_list.get(Global.i).blocked==false)) {
                 System.out.println("Student didn't get any offer!!!");
             }
             student_mode();
@@ -461,15 +477,20 @@ class Enter_As_Student {
             double cgpa = sc.nextDouble();
             Placement_Cell.update(cgpa);
             System.out.println("CGPA updated successfully!!!");
+            student_mode();
         } else if (choice == 6) {
             System.out.println();
             if (Add_Students.student_list.get(Global.i).reject != Add_Students.student_list.get(Global.i).company_list.size()) {
                 System.out.println("Most recent offer is accepted!!!");
                 Add_Students.student_list.get(Global.i).accepted = true;
+                Add_Students.student_list.get(Global.i).Selected_Company_Name=Add_Students.student_list.get(Global.i).company_list.get(Add_Students.student_list.get(Global.i).company_list.size()-1).Company_name;
                 Add_Students.student_list.get(Global.i).ctc=Add_Students.student_list.get(Global.i).company_list.get(Add_Students.student_list.get(Global.i).company_list.size()-1).ctc;
                 Add_Students.student_list.get(Global.i).Role=Add_Students.student_list.get(Global.i).company_list.get(Add_Students.student_list.get(Global.i).company_list.size()-1).Role;
+                student_mode();
             } else
                 System.out.println("Student is Blocked!!!");
+                student_mode();
+
         } else if (choice == 7) {
             System.out.println();
             if (Add_Students.student_list.get(Global.i).reject != Add_Students.student_list.get(Global.i).company_list.size()) {
@@ -485,7 +506,7 @@ class Enter_As_Student {
     }
 }
 class Add_Students {
-    String name, branch,Role;
+    String name, branch,Role,Selected_Company_Name;
     int Roll_no,reject,registered_status,day,month,year,drive_status,status;
     boolean blocked, accepted;
     double CGPA,ctc;
